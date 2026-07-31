@@ -10,6 +10,7 @@ anywhere.
 index.html    markup and copy
 styles.css    layout and theme
 sakura.js     the falling-petal canvas
+brand/        logo marks + usage notes
 ```
 
 ## Running it
@@ -22,8 +23,15 @@ python3 -m http.server 8000
 
 ## Deploying
 
-Any static host works. For GitHub Pages: **Settings → Pages → Deploy from a
-branch**, pointing at the branch root.
+`.github/workflows/deploy.yml` publishes the site to GitHub Pages on every push
+to `main`, and can be run by hand from the Actions tab.
+
+The workflow asks Pages to enable itself (`enablement: true`), so a fresh repo
+normally needs no manual setup. If the deploy step still reports that Pages is
+not enabled, set *Source* to **GitHub Actions** once in **Settings → Pages**.
+
+Any other static host works too — there is nothing to build, so serving the
+repo root is enough.
 
 ## Notes
 
