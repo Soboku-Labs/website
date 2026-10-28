@@ -45,7 +45,14 @@ repo root is enough.
   animation loop at all.
 - **Theme** follows `prefers-color-scheme`; both light and dark are defined as
   custom properties at the top of `styles.css`.
-- **The three "Selected work" entries are placeholders** — swap the names,
-  descriptions, and years in `index.html`.
+- **Products** are listed by hand in `index.html` — there is no build step and
+  nothing reads the GitHub API, so adding a product means adding one `<li>` to
+  the `.work-list`. A product's name links to the best destination it has: the
+  live app where one is deployed, the repository otherwise. The small `Source`
+  link appears only when the name points somewhere other than the repository.
+- `Nagare` is listed but its repository is private, so it carries a plain
+  `Private` marker instead of a link — a link would 404 for everyone but the
+  org. When the repo goes public, swap that `<span>` for an `<a>` pointing at
+  it, exactly like `Marginalia`.
 - There is no contact section yet. If you want one, the footer in `index.html`
-  is the natural place for a `mailto:` link.
+  is the natural place for a `mailto:` link, next to the GitHub link.
