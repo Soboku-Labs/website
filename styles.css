@@ -201,18 +201,34 @@ h2 {
   font-size: 1.125rem;
 }
 
+/* Product names and the footer link: an accent underline that only thickens
+   on hover, so the resting state stays quiet. */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--bg-wash) / 0.9);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.work-link {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration-color: transparent;
+}
+.work-link:hover { color: var(--accent); }
+
 .work-note {
   grid-column: 1 / -1;
   font-size: 0.8125rem;
   line-height: 1.45;
   color: var(--muted);
   text-wrap: pretty;
-}
-
-.work-year {
-  font-size: 0.75rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--muted);
 }
 
 /* ---------------------------------------------------------------- footer */
